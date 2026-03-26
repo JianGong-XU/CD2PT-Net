@@ -1,9 +1,9 @@
-# Enhanced Noise2Noise-Based Multitemporal Progressive Interaction Learning for Real Dual-Polarization SAR Image Despeckling
+# Collaborative Dual-Domain Perception Network for Unsupervised Despeckling of Sentinel-1 Dual-Polarization SAR Images
 
 Official PyTorch implementation of the paper  
-**"Enhanced Noise2Noise-Based Multitemporal Progressive Interaction Learning for Real Dual-Polarization SAR Image Despeckling"**
+**"Collaborative Dual-Domain Perception Network for Unsupervised Despeckling of Sentinel-1 Dual-Polarization SAR Images"**
 
-By **Jiangong Xu**, **Yang Yang**, **Weibao Xue**, **Yingdong Pi**, **Junli Li**, **Jun Pan**, and **Mi Wang**  
+By **Jiangong Xu**, **Yang Yang**, **Weibao Xue**, **Xiaoyu Yu**, **Junli Li**, **Jun Pan**, and **Mi Wang**  
 
 
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)]()
@@ -13,10 +13,10 @@ By **Jiangong Xu**, **Yang Yang**, **Weibao Xue**, **Yingdong Pi**, **Junli Li**
 
 ## 🚀 Abstract
 
-> Effective speckle suppression is essential for the reliable utilization of synthetic aperture radar (SAR) data. Nevertheless, despeckling remains a challenging task due to the absence of clean reference data and the inherently complex statistical characteristics of speckle noise. To address these limitations, we propose a **Multitemporal Progressive Interaction Network (MTPI-Net)** built upon an enhanced **Noise2Noise** paradigm. MTPI-Net introduces a hierarchical progressive learning strategy that jointly models **spatial, frequency-domain, and temporal dependencies**. It employs dual-domain collaboration and refinement units with a **recursive residual-in-recursive-attention** mechanism, enabling fine-grained cross-domain interaction through *perception*, *gating*, and *aggregation*.  A **collaborative optimization loss** enforces numerical fidelity, structural preservation, and temporal coherence, guided by polarimetric priors derived from covariance statistics and decomposition features.
+> Despeckling of real dual-polarization SAR data remains challenging due to the absence of clean reference images and the complex statistical characteristics of speckle noise. Although existing unsupervised deep learning methods have shown promising performance, they still have limited ability to exploit temporal correlations among multitemporal observations and often overlook physical constraints embedded in polarimetric information, resulting in incomplete structural recovery and scattering distortion. To address these issues, this article proposes **CD^2^P-Net**, a collaborative dual-domain progressive network for real dual-polarization SAR image despeckling. Built upon an enhanced multitemporal Noise2Noise paradigm, the proposed method jointly models spatial, frequency-domain, and temporal dependencies to fully exploit speckle independence and temporal coherence across adjacent acquisitions. In addition, covariance statistics and polarimetric decomposition cues are incorporated to enhance the physical consistency of learned representations. Extensive experiments on real dual-polarization Sentinel-1 time-series data demonstrate that **CD^2^P-Net** consistently outperforms representative existing methods in both quantitative and visual evaluations, while effectively preserving spatial details, polarimetric fidelity, and semantic integrity.
 
 > <p align="center">
->  <img src="figures/structure_of_MTPI-Net.png" width="95%">
+>  <img src="figures/structure_of_CD2PT-Net.png" width="95%">
 > </p>
 
 ---
@@ -84,8 +84,8 @@ MTPI-Net/
 │ ├── SPP.py # Shunt Parallel Perception module
 │ ├── AFG.py # Adaptive Feature Gating module
 │ ├── HFA.py # Holistic Feature Aggregation module
-│ ├── DDCR.py # Dual-Domain Collaborative Refinement
-│ ├── MTPI_Net.py # Main network (FEN + R2A + DDCR)
+│ ├── D2CR.py # Dual-Domain Collaborative Refinement
+│ ├── CD2PT_Net.py # Main network (FEN + R2A + DDCR)
 │ ├── losses.py # Collaborative optimization loss
 ├── train.py # Training script
 ├── inference.py # Inference script
@@ -130,9 +130,9 @@ python inference.py \
 
 If you use this code or dataset, please cite:
 ```
-@article{Xu2025MTPI,
-  title={Enhanced Noise2Noise-Based Multitemporal Progressive Interaction Learning for Real Dual-Polarization SAR Imagery Despeckling},
-  author={Xu, Jiangong and Yang, Yang and Xue, Weibao and Pi, Yingdong and Li, Junli and Pan, Jun and Wang, Mi},
+@article{Xu2025CD2PT,
+  title={Collaborative Dual-Domain Perception Network for Unsupervised Despeckling of Sentinel-1 Dual-Polarization SAR Images},
+  author={Xu, Jiangong and Yang, Yang and Xue, Weibao and Yu, Xiaoyu and Li, Junli and Pan, Jun and Wang, Mi},
   journal={XXXX},
   year={2025}
 }
