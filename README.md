@@ -130,16 +130,16 @@ python inference.py \
 
 If you use this code or dataset, please cite:
 ```
-@article{Xu2025CD2PT,
+@article{Xu2026CD2PT,
   title={Collaborative Dual-Domain Perception Network for Unsupervised Despeckling of Sentinel-1 Dual-Polarization SAR Images},
   author={Xu, Jiangong and Yang, Yang and Xue, Weibao and Yu, Xiaoyu and Li, Junli and Pan, Jun and Wang, Mi},
   journal={XXXX},
-  year={2025}
+  year={2026}
 }
 ```
 ## 📄 License
 This project is released under the **MIT License**.
-© 2025 Jiangong Xu et al. All rights reserved.
+© 2026 Jiangong Xu et al. All rights reserved.
 
 🙌 Acknowledgments
 
